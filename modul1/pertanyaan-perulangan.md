@@ -1,4 +1,3 @@
-````md id="b0m8hy"
 # Percobaan 2A: Perulangan (for)
 
 ## Jawaban Pertanyaan Praktikum 1.6.4
@@ -9,25 +8,28 @@
 
 Rangkaian menggunakan **5 LED** yang dihubungkan ke pin digital Arduino.
 
-![alt text](schematic.png)
+![Schematic](modul1/schematic.png)
 
-🔗 Link Tinkercad:  
-https://www.tinkercad.com/things/5Lz7ddjyz3D-modul-1-praktikum
+🔗 Link Tinkercad:
+[https://www.tinkercad.com/things/5Lz7ddjyz3D-modul-1-praktikum](https://www.tinkercad.com/things/5Lz7ddjyz3D-modul-1-praktikum)
 
 ### Konfigurasi Rangkaian:
-- LED 1 → Pin 2  
-- LED 2 → Pin 3  
-- LED 3 → Pin 4  
-- LED 4 → Pin 5  
-- LED 5 → Pin 6  
+
+* LED 1 → Pin 2
+* LED 2 → Pin 3
+* LED 3 → Pin 4
+* LED 4 → Pin 5
+* LED 5 → Pin 6
 
 ### Penjelasan:
-- Setiap LED memiliki dua kaki:
-  - **Anoda (kaki panjang)** → dihubungkan ke pin Arduino (2–6)
-  - **Katoda (kaki pendek)** → dihubungkan ke **resistor 220Ω → GND**
-- Resistor berfungsi untuk membatasi arus agar LED tidak rusak
-- Semua LED terhubung ke jalur GND yang sama
-- Rangkaian ini memungkinkan setiap LED dikontrol secara individual
+
+* Setiap LED memiliki dua kaki:
+
+  * **Anoda (kaki panjang)** → dihubungkan ke pin Arduino (2–6)
+  * **Katoda (kaki pendek)** → dihubungkan ke **resistor 220Ω → GND**
+* Resistor berfungsi untuk membatasi arus agar LED tidak rusak
+* Semua LED terhubung ke jalur GND yang sama
+* Rangkaian ini memungkinkan setiap LED dikontrol secara individual
 
 ---
 
@@ -35,9 +37,9 @@ https://www.tinkercad.com/things/5Lz7ddjyz3D-modul-1-praktikum
 
 Efek LED berjalan dari kiri ke kanan dibuat menggunakan perulangan **for dengan increment (++)**.
 
-```cpp id="h7wjgr"
+```cpp
 for (int ledPin = 2; ledPin < 7; ledPin++)
-````
+```
 
 ### Penjelasan:
 
@@ -61,7 +63,7 @@ Karena dilakukan berurutan dengan delay, maka terlihat seperti **LED berjalan da
 
 Efek kembali dibuat menggunakan perulangan **for dengan decrement (--)**.
 
-```cpp id="3k7jyl"
+```cpp
 for (int ledPin = 6; ledPin >= 2; ledPin--)
 ```
 
@@ -87,7 +89,7 @@ Sehingga menghasilkan efek **LED kembali dari kanan ke kiri**.
 
 ### Kode Program:
 
-```cpp id="tnk8q0"
+```cpp
 void setup() {
   for (int i = 2; i <= 7; i++) {
     pinMode(i, OUTPUT);
@@ -117,9 +119,9 @@ void loop() {
 
 ---
 
-## Penjelasan Baris per Baris (README.md)
+## Penjelasan Baris per Baris
 
-```md id="dc4u4t"
+```md
 # Program LED Bergantian (3 Kiri - 3 Kanan)
 
 ## Setup
@@ -164,7 +166,7 @@ delay(1000);
 
 ## Alur Program
 
-```id="gk5vql"
+```md
 Mulai
  ↓
 LED kanan (5,6,7) menyala
