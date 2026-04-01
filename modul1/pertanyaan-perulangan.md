@@ -8,7 +8,8 @@
 
 Rangkaian menggunakan **5 LED** yang dihubungkan ke pin digital Arduino.
 
-![Schematic](modul1/schematic.png)
+<img width="1338" height="1055" alt="image" src="https://github.com/user-attachments/assets/50fcbd79-9a3b-47c2-8eb3-53de7dc8601f" />
+
 
 🔗 Link Tinkercad:
 [https://www.tinkercad.com/things/5Lz7ddjyz3D-modul-1-praktikum](https://www.tinkercad.com/things/5Lz7ddjyz3D-modul-1-praktikum)
