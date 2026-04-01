@@ -3,13 +3,13 @@ int timer = 100;
 void setup() { 
 // gunakan loop for untuk menginisialisasi setiap pin sebagai 
 output: 
-for (int ledPin = 2; ledPin < 7; ledPin++) { 
+for (int ledPin = 2; ledPin < 8; ledPin++) { 
 pinMode(ledPin, OUTPUT); 
 } 
 } 
 void loop() { 
 // looping dari pin rendah ke tinggi 
-for (int ledPin = 2; ledPin < 7; ledPin++) { 
+for (int ledPin = 2; ledPin < 8; ledPin++) { 
 // hidupkan LED pin nya: 
 digitalWrite(ledPin, HIGH); 
 delay(timer); 
@@ -17,7 +17,7 @@ delay(timer);
 digitalWrite(ledPin, LOW); 
 } 
 // looping dari pin yang tinggi ke yang rendah 
-for (int ledPin = 6; ledPin >= 2; ledPin--) { 
+for (int ledPin = 7; ledPin >= 2; ledPin--) { 
 // menghidupkan pin: 
 digitalWrite(ledPin, HIGH); 
 delay(timer); 

@@ -1,48 +1,51 @@
-# **Percobaan 2A: Perulangan (for)**
+````md id="b0m8hy"
+# Percobaan 2A: Perulangan (for)
 
-## **Jawaban Pertanyaan Praktikum 1.6.4**
+## Jawaban Pertanyaan Praktikum 1.6.4
 
 ---
 
-### **1. Gambarkan rangkaian schematic 5 LED running yang digunakan pada percobaan!**
+## 1. Gambarkan rangkaian schematic 5 LED running yang digunakan pada percobaan!
 
 Rangkaian menggunakan **5 LED** yang dihubungkan ke pin digital Arduino.
 
-**Konfigurasi rangkaian:**
+modul1/schematic.png
 
-* LED 1 → Pin 2
-* LED 2 → Pin 3
-* LED 3 → Pin 4
-* LED 4 → Pin 5
-* LED 5 → Pin 6
-* Semua kaki negatif LED → resistor → GND
+🔗 Link Tinkercad:  
+https://www.tinkercad.com/things/5Lz7ddjyz3D-modul-1-praktikum
 
-**Penjelasan:**
+### Konfigurasi Rangkaian:
+- LED 1 → Pin 2  
+- LED 2 → Pin 3  
+- LED 3 → Pin 4  
+- LED 4 → Pin 5  
+- LED 5 → Pin 6  
 
-* Setiap LED dikontrol oleh satu pin digital
-* Setiap LED memiliki 2 kaki:
-* Anoda (kaki panjang) → dihubungkan ke pin Arduino (2–6)
-* Katoda (kaki pendek) → dihubungkan ke resistor → GND
-* Resistor digunakan untuk membatasi arus
-* Semua LED berbagi jalur GND
+### Penjelasan:
+- Setiap LED memiliki dua kaki:
+  - **Anoda (kaki panjang)** → dihubungkan ke pin Arduino (2–6)
+  - **Katoda (kaki pendek)** → dihubungkan ke **resistor 220Ω → GND**
+- Resistor berfungsi untuk membatasi arus agar LED tidak rusak
+- Semua LED terhubung ke jalur GND yang sama
+- Rangkaian ini memungkinkan setiap LED dikontrol secara individual
 
 ---
 
-### **2. Jelaskan bagaimana program membuat efek LED berjalan dari kiri ke kanan!**
+## 2. Jelaskan bagaimana program membuat efek LED berjalan dari kiri ke kanan!
 
-Efek LED berjalan dari kiri ke kanan dibuat menggunakan perulangan **for naik (increment)**.
+Efek LED berjalan dari kiri ke kanan dibuat menggunakan perulangan **for dengan increment (++)**.
 
-```cpp id="y3y32l"
+```cpp id="h7wjgr"
 for (int ledPin = 2; ledPin < 7; ledPin++)
-```
+````
 
-**Penjelasan:**
+### Penjelasan:
 
-* `ledPin = 2` → mulai dari LED pertama
+* `ledPin = 2` → memulai dari LED pertama
 * `ledPin < 7` → berhenti di pin 6
 * `ledPin++` → berpindah ke LED berikutnya
 
-**Proses:**
+### Proses:
 
 1. LED pin 2 menyala → mati
 2. LED pin 3 menyala → mati
@@ -50,25 +53,25 @@ for (int ledPin = 2; ledPin < 7; ledPin++)
 4. LED pin 5 menyala → mati
 5. LED pin 6 menyala → mati
 
-Karena dilakukan berurutan dan diberi delay, terlihat seperti **LED berjalan dari kiri ke kanan**.
+Karena dilakukan berurutan dengan delay, maka terlihat seperti **LED berjalan dari kiri ke kanan**.
 
 ---
 
-### **3. Jelaskan bagaimana program membuat LED kembali dari kanan ke kiri!**
+## 3. Jelaskan bagaimana program membuat LED kembali dari kanan ke kiri!
 
-Efek kembali dibuat dengan perulangan **for turun (decrement)**.
+Efek kembali dibuat menggunakan perulangan **for dengan decrement (--)**.
 
-```cpp id="g1k8u6"
+```cpp id="3k7jyl"
 for (int ledPin = 6; ledPin >= 2; ledPin--)
 ```
 
-**Penjelasan:**
+### Penjelasan:
 
 * `ledPin = 6` → mulai dari LED terakhir
 * `ledPin >= 2` → berhenti di LED pertama
 * `ledPin--` → bergerak mundur
 
-**Proses:**
+### Proses:
 
 1. LED pin 6 menyala → mati
 2. LED pin 5 menyala → mati
@@ -80,108 +83,99 @@ Sehingga menghasilkan efek **LED kembali dari kanan ke kiri**.
 
 ---
 
-# **4. Program: 3 LED kiri dan 2 LED kanan bergantian (sesuai 5 LED)**
+## 4. Program LED 3 Kiri dan 3 Kanan Bergantian (6 LED)
 
----
+### Kode Program:
 
-## **Kode Program**
-
-```cpp id="kkb7w4"
-int timer = 200; // delay waktu
-
+```cpp id="tnk8q0"
 void setup() {
-  // inisialisasi pin 2 sampai 6
-  for (int ledPin = 2; ledPin < 7; ledPin++) {
-    pinMode(ledPin, OUTPUT);
+  for (int i = 2; i <= 7; i++) {
+    pinMode(i, OUTPUT);
   }
 }
 
 void loop() {
-  // === LED kiri menyala (pin 2,3,4) ===
-  digitalWrite(2, HIGH);
-  digitalWrite(3, HIGH);
-  digitalWrite(4, HIGH);
-
-  digitalWrite(5, LOW);
-  digitalWrite(6, LOW);
-
-  delay(timer);
-
-  // === LED kanan menyala (pin 5,6) ===
-  digitalWrite(2, LOW);
-  digitalWrite(3, LOW);
-  digitalWrite(4, LOW);
-
-  digitalWrite(5, HIGH);
+  // LED kanan menyala (pin 5, 6, 7)
+  digitalWrite(7, HIGH);
   digitalWrite(6, HIGH);
+  digitalWrite(5, HIGH);
+  digitalWrite(4, LOW);
+  digitalWrite(3, LOW);
+  digitalWrite(2, LOW);
+  delay(1000);
 
-  delay(timer);
+  // LED kiri menyala (pin 2, 3, 4)
+  digitalWrite(7, LOW);
+  digitalWrite(6, LOW);
+  digitalWrite(5, LOW);
+  digitalWrite(4, HIGH);
+  digitalWrite(3, HIGH);
+  digitalWrite(2, HIGH);
+  delay(1000);
 }
 ```
 
 ---
 
-## **Penjelasan Baris per Baris (README.md)**
+## Penjelasan Baris per Baris (README.md)
 
-```md id="hjflrz"
-# Program LED Bergantian (5 LED)
-
-## Inisialisasi
-int timer = 200;
-- Mengatur kecepatan perpindahan LED
+```md id="dc4u4t"
+# Program LED Bergantian (3 Kiri - 3 Kanan)
 
 ## Setup
-for (int ledPin = 2; ledPin < 7; ledPin++)
-- Mengatur pin 2 sampai 6 sebagai OUTPUT
+for (int i = 2; i <= 7; i++)
+- Mengatur pin 2 sampai 7 sebagai OUTPUT
 
-pinMode(ledPin, OUTPUT);
+pinMode(i, OUTPUT);
 - Mengaktifkan pin sebagai output
 
 ## Loop Utama
 
-### Bagian 1: LED kiri menyala
-digitalWrite(2, HIGH);
-digitalWrite(3, HIGH);
-digitalWrite(4, HIGH);
-- Menyalakan 3 LED sisi kiri
+### Bagian 1 (LED kanan menyala)
+digitalWrite(7, HIGH);
+digitalWrite(6, HIGH);
+digitalWrite(5, HIGH);
+- Menyalakan LED sisi kanan
 
-digitalWrite(5, LOW);
+digitalWrite(4, LOW);
+digitalWrite(3, LOW);
+digitalWrite(2, LOW);
+- Mematikan LED sisi kiri
+
+delay(1000);
+- Memberi jeda 1 detik
+
+### Bagian 2 (LED kiri menyala)
+digitalWrite(7, LOW);
 digitalWrite(6, LOW);
+digitalWrite(5, LOW);
 - Mematikan LED kanan
 
-delay(timer);
-- Memberi jeda
+digitalWrite(4, HIGH);
+digitalWrite(3, HIGH);
+digitalWrite(2, HIGH);
+- Menyalakan LED kiri
 
-### Bagian 2: LED kanan menyala
-digitalWrite(2, LOW);
-digitalWrite(3, LOW);
-digitalWrite(4, LOW);
-- Mematikan LED kiri
-
-digitalWrite(5, HIGH);
-digitalWrite(6, HIGH);
-- Menyalakan LED kanan
-
-delay(timer);
+delay(1000);
 - Memberi jeda sebelum mengulang
 ```
 
 ---
 
-## **Alur Program**
+## Alur Program
 
-```id="y0j23x"
+```id="gk5vql"
 Mulai
+ ↓
+LED kanan (5,6,7) menyala
+ ↓
+LED kiri mati
+ ↓
+Delay
  ↓
 LED kiri (2,3,4) menyala
  ↓
 LED kanan mati
- ↓
-Delay
- ↓
-LED kanan (5,6) menyala
- ↓
-LED kiri mati
  ↓
 Delay
  ↓
