@@ -1,4 +1,6 @@
-Nama        : Rafif SUrya Murtadha
-NIM         : H1D023008
-Shift KRS   : H
-Shift Baru  : Senin
+# Praktikum Pemrograman Sistem Tertanam
+
+Nama        : Rafif Surya Murtadha 
+NIM         : H1D023008  
+Shift KRS   : H  
+Shift Baru  : Senin  

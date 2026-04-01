@@ -21,8 +21,8 @@ Rangkaian menggunakan **5 LED** yang dihubungkan ke pin digital Arduino.
 
 * Setiap LED dikontrol oleh satu pin digital
 * Setiap LED memiliki 2 kaki:
-Anoda (kaki panjang) → dihubungkan ke pin Arduino (2–6)
-Katoda (kaki pendek) → dihubungkan ke resistor → GND
+* Anoda (kaki panjang) → dihubungkan ke pin Arduino (2–6)
+* Katoda (kaki pendek) → dihubungkan ke resistor → GND
 * Resistor digunakan untuk membatasi arus
 * Semua LED berbagi jalur GND
 
