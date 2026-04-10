@@ -166,7 +166,11 @@ void loop() {
   lastDownState = downState;
 }
 
+```
+
+---
 Penjelasan Program 
+```cpp
 # Program Counter dengan 2 Push Button
 
 ## Setup

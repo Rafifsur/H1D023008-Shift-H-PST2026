@@ -91,8 +91,12 @@ void loop() {
   }
 }
 
-``
-Penjelasan Program
+
+```
+
+---
+Penjelasan Program 
+```cpp
 Setup
 for(int i=0; i<8; i++)
 
